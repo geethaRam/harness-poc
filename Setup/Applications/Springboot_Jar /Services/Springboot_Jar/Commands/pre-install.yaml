@@ -1,0 +1,17 @@
+harnessApiVersion: '1.0'
+type: OTHER
+commandUnitType: COMMAND
+commandUnits:
+- command: |-
+    sudo su -
+    export http_proxy=awsproxy:3128
+    export https_proxy=awsproxy:3128
+
+    yum install -y cm_replacetoken* pet_provision-4.2.3-1* pet_db-deploy*
+
+    yum list installed | grep -e provision* -e db-deploy*
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: PreInstall Packages
+  scriptType: BASH
+targetToAllEnv: true

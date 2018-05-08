@@ -1,0 +1,37 @@
+harnessApiVersion: '1.0'
+type: OTHER
+commandUnitType: COMMAND
+commandUnits:
+- command: |2-
+
+    # Execute as root and pass environment variables
+    # su -p -
+
+    # Execute as root via user credentials (with root privileges)
+    # sudo -E su -p -
+
+    # The following variables are absolute paths defined as:
+    # ${HOME}/${appName}/${serviceName}/${serviceTemplateName}/[runtime|backup|staging]
+
+    mkdir -p "$WINGS_RUNTIME_PATH"
+    mkdir -p "$WINGS_BACKUP_PATH"
+    mkdir -p "$WINGS_STAGING_PATH"
+  commandUnitType: SETUP_ENV
+  deploymentType: SSH
+  name: Setup Env
+  scriptType: BASH
+- command: |
+    mkdir -p /staging
+    cd /staging
+    aws s3 cp s3://7542-4930-3703-application-staging/PET/harness-poc/ . --sse --recursive
+    ls -R -latr
+
+    export ACCOUNT=754249303703; export IAM_ROLE=JENKINS_RAVE; python assumeRole.py
+
+    provision ecs toolsdev fresh
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Exec
+  scriptType: BASH
+  workingDirectory: $WINGS
+targetToAllEnv: true

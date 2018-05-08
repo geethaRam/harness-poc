@@ -1,0 +1,38 @@
+harnessApiVersion: '1.0'
+type: CANARY
+envName: dev
+failureStrategies:
+- executionScope: WORKFLOW
+  failureTypes:
+  - APPLICATION_ERROR
+  repairActionCode: ROLLBACK_WORKFLOW
+  retryCount: 0
+notificationRules:
+- conditions:
+  - FAILED
+  executionScope: WORKFLOW
+  notificationGroups:
+  - Account Administrator
+preDeploymentSteps:
+- type: SHELL_SCRIPT
+  name: Shell Script
+  properties:
+    scriptType: BASH
+    scriptString: |-
+      echo "s3 copy"
+      echo "provision ecs ${workflow.variables.env} ${workflow.variables.command}"
+    timeoutMillis: 600000
+    connectionType: SSH
+    executeOnDelegate: true
+templatized: true
+userVariables:
+- type: TEXT
+  fixed: false
+  mandatory: true
+  name: env
+  value: dev
+- type: TEXT
+  fixed: false
+  mandatory: true
+  name: command
+  value: fresh

@@ -1,0 +1,20 @@
+harnessApiVersion: '1.0'
+type: AWS_SSH
+computeProviderName: aws
+computeProviderType: AWS
+connectionType: 'User/Password :: sudo - <app-account>'
+deploymentType: SSH
+desiredCapacity: 0
+hostNameConvention: ${host.ec2Instance.privateDnsName.split('\.')[0]}
+infraMappingType: AWS_SSH
+provisionInstances: false
+region: us-east-1
+serviceName: provision
+subnetIds:
+- subnet-51130f0b
+tags:
+- name: AGS
+  value: HARNESS
+usePublicDns: false
+vpcs:
+- vpc-d966aca1

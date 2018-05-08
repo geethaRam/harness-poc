@@ -1,0 +1,30 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+- type: ENV_STATE
+  name: Dev
+  parallel: false
+  workflowName: ECS_provision
+  workflowVariables:
+  - name: env
+    value: dev
+  - name: command
+    value: fresh
+- type: ENV_STATE
+  name: QA
+  parallel: false
+  workflowName: ECS_provision
+  workflowVariables:
+  - name: env
+    value: qa
+  - name: command
+    value: fresh
+- type: ENV_STATE
+  name: PROD
+  parallel: false
+  workflowName: ECS_provision
+  workflowVariables:
+  - name: env
+    value: prod
+  - name: command
+    value: fresh

@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: ECS
+containerDefinition:
+  commands:
+  - ''
+  cpu: 100
+  memory: 300
+  name: DEFAULT_NAME

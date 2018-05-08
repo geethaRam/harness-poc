@@ -1,0 +1,25 @@
+harnessApiVersion: '1.0'
+type: START
+commandUnitType: COMMAND
+commandUnits:
+- command: |-
+    echo "Starting Service"
+
+    ls -ltr
+
+    echo "Running: ${command}"
+    $command ${WINGS_RUNTIME_PATH}/docker-example-springboot.jar
+  commandUnitType: EXEC
+  deploymentType: SSH
+  name: Start Service
+  scriptType: BASH
+  workingDirectory: $WINGS_RUNTIME_PATH
+- command: |-
+    echo "Checking Service"
+
+    ps aux | grep java
+  commandUnitType: PROCESS_CHECK_RUNNING
+  deploymentType: SSH
+  name: Service Running
+  scriptType: BASH
+targetToAllEnv: true

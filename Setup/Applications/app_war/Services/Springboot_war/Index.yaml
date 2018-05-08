@@ -1,0 +1,5 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+applicationStack: Hardened Tomcat 8
+artifactType: WAR
+description: war type

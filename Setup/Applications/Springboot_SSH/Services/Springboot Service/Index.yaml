@@ -1,0 +1,17 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+artifactType: ZIP
+configVariables:
+- name: deploy_command
+  value: ${javaexe} -jar -Dsun.misc.URLClassPath.disableJarChecking=true ${JAVA_OPTS} ${APPD_ARGS}
+  valueType: TEXT
+- name: sdlc
+  value: local
+  valueType: TEXT
+- name: JAVA_OPTS
+  value: ${JAVA_OPTS} -Dserver.port=8080 -Dspring.profiles.active=${sdlc}
+  valueType: TEXT
+- name: javaexe
+  value: /usr/bin/java
+  valueType: TEXT
+description: Service_Artifact Type_ZIP_

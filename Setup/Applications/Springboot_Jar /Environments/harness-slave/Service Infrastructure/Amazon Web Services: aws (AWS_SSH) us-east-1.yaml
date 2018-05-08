@@ -1,0 +1,24 @@
+harnessApiVersion: '1.0'
+type: AWS_SSH
+computeProviderName: aws
+computeProviderType: AWS
+connectionType: User/Password
+deploymentType: SSH
+desiredCapacity: 0
+hostNameConvention: ${host.ec2Instance.privateDnsName}.split('\.')[0]
+infraMappingType: AWS_SSH
+provisionInstances: false
+region: us-east-1
+securityGroupIds:
+- sg-edb6149b
+- sg-d0fc7ea2
+- sg-4a74f538
+serviceName: Springboot_Jar
+subnetIds:
+- subnet-3a0d1160
+tags:
+- name: AGS
+  value: HARNESS
+usePublicDns: false
+vpcs:
+- vpc-d966aca1
