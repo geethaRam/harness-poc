@@ -12,8 +12,7 @@ phases:
       properties:
         scriptType: BASH
         scriptString: "﻿mkdir -p /staging\ncd /staging/example-springboot\nrm -rf\
-          \  ~/.aws/credentials\n\n#aws s3 cp s3://7542-4930-3703-application-staging/PET/harness-poc/\
-          \ . --sse --recursive\nls -R -latr\n\nexport ACCOUNT=754249303703; export\
+          \  ~/.aws/credentials\n\nls -R -latr\n\nexport ACCOUNT=754249303703; export\
           \ IAM_ROLE=JENKINS_PET\ncat ~/.aws/*\n\npython assumeRole.py\n\nexport AWS_PROFILE=JENKINS_PET\n\
           \nprovision autoscale dev fresh\n"
         timeoutMillis: 600000
