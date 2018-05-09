@@ -30,6 +30,8 @@ phases:
       name: AWS CodeDeploy
       properties:
         bucket: ${artifact.bucketName}
+        commandName: Amazon Code Deploy
+        fileExistsBehavior: DISALLOW
         bundleType: zip
         key: ${artifact.key}
     stepsInParallel: false
