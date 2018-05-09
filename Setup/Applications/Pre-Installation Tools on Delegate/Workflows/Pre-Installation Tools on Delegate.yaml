@@ -14,7 +14,7 @@ phases:
         scriptString: "﻿mkdir -p /staging\ncd /staging/example-springboot\nrm -rf\
           \  ~/.aws/credentials\n\nls -R -latr\n\nexport ACCOUNT=754249303703; export\
           \ IAM_ROLE=JENKINS_PET\ncat ~/.aws/*\n\npython assumeRole.py\n\nexport AWS_PROFILE=JENKINS_PET\n\
-          \nprovision autoscale dev fresh\n"
+          \nprovision autoscale dev dns-update\n"
         timeoutMillis: 600000
         connectionType: SSH
         executeOnDelegate: true
