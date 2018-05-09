@@ -1,0 +1,7 @@
+harnessApiVersion: '1.0'
+type: AMAZON_S3
+artifactPaths:
+- PET/harness-poc/spring-boot-thymeleaf.zip
+bucketName: 7542-4930-3703-application-staging
+metadataOnly: true
+serverName: aws
