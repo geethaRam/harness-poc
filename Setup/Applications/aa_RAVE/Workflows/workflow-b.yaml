@@ -1,0 +1,41 @@
+harnessApiVersion: '1.0'
+type: BUILD
+phases:
+- daemonSet: false
+  name: Phase 1
+  phaseSteps:
+  - type: PREPARE_STEPS
+    name: Prepare Steps
+    steps:
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        scriptType: BASH
+        scriptString: |
+          mkdir -p /staging
+          cd /staging
+          rm -rf  ~/.aws/credentials
+
+          #aws s3 cp s3://7542-4930-3703-application-staging/PET/harness-poc/ . --sse --recursive
+          ls -R -latr
+
+          export ACCOUNT=754249303703; export IAM_ROLE=JENKINS_RAVE
+          cat ~/.aws/*
+
+          python assumeRole.py
+
+          export AWS_PROFILE=JENKINS_RAVE
+
+          provision alb toolsdev fresh
+        timeoutMillis: 600000
+        connectionType: SSH
+        executeOnDelegate: true
+    stepsInParallel: false
+  - type: COLLECT_ARTIFACT
+    name: Collect Artifact
+    stepsInParallel: false
+  - type: WRAP_UP
+    name: Wrap Up
+    stepsInParallel: false
+  provisionNodes: false
+templatized: false
