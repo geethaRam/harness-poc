@@ -20,8 +20,8 @@ phases:
   infraMappingName: Amazon Web Services- aws -AWS_SSH- us-east-1
   name: Phase 1
   phaseSteps:
-  - type: PROVISION_NODE
-    name: Provision Nodes
+  - type: INFRASTRUCTURE_NODE
+    name: Prepare Infra
     steps:
     - type: AWS_NODE_SELECT
       name: Select Nodes
