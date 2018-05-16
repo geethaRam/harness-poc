@@ -43,6 +43,7 @@ phases:
     stepsInParallel: false
   provisionNodes: false
   serviceName: aaa_pet_cd
+  statefulSet: false
 rollbackPhases:
 - type: AWS_CODEDEPLOY
   computeProviderName: aws
@@ -71,4 +72,5 @@ rollbackPhases:
     stepsInParallel: false
   provisionNodes: false
   serviceName: aaa_pet_cd
+  statefulSet: false
 templatized: false

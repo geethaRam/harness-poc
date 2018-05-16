@@ -48,6 +48,7 @@ phases:
     stepsInParallel: false
   provisionNodes: false
   serviceName: Springboot_Jar
+  statefulSet: false
 preDeploymentSteps:
 - type: ARTIFACT_CHECK
   name: Artifact Check
@@ -89,4 +90,5 @@ rollbackPhases:
     stepsInParallel: false
   provisionNodes: false
   serviceName: Springboot_Jar
+  statefulSet: false
 templatized: false

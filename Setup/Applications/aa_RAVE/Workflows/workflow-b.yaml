@@ -38,4 +38,5 @@ phases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
+  statefulSet: false
 templatized: false

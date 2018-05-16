@@ -40,6 +40,7 @@ phases:
     stepsInParallel: false
   provisionNodes: false
   serviceName: Springboot_DockerImage
+  statefulSet: false
 rollbackPhases:
 - type: ECS
   computeProviderName: aws
@@ -68,4 +69,5 @@ rollbackPhases:
     stepsInParallel: false
   provisionNodes: false
   serviceName: Springboot_DockerImage
+  statefulSet: false
 templatized: false
