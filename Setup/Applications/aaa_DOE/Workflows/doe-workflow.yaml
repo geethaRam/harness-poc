@@ -19,7 +19,8 @@ phases:
         scriptType: BASH
         scriptString: "cd /tmp/DOE/sample-springboot\nrm -rf  ~/.aws/credentials\n\
           export ACCOUNT=465257512377; export IAM_ROLE=JENKINS_DOE\ncat ~/.aws/*\n\
-          \npython assumeRole.py\n\nexport AWS_PROFILE=JENKINS_DOE\n\n/tmp/DOE/provision-4.3.3/bin/provision\
+          \npython assumeRole.py\n\nexport AWS_PROFILE=JENKINS_DOE\n\nexport PROVISION_BASE_IMAGE_TAG=latest-rc\n\
+          export PROVISION_APPSTACKVERSION=sample\n\n/tmp/DOE/provision-4.3.3/bin/provision\
           \ ecs dev fresh \n\n#/tmp/DOE/provision-4.3.3/bin/provision alb dev fresh"
         timeoutMillis: 600000
         connectionType: SSH
