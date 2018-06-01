@@ -1,11 +1,5 @@
 harnessApiVersion: '1.0'
 type: BUILD
-notificationRules:
-- conditions:
-  - FAILED
-  executionScope: WORKFLOW
-  notificationGroups:
-  - Account Administrator
 phases:
 - daemonSet: false
   name: Phase 1
