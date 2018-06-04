@@ -8,3 +8,7 @@ pipelineStages:
 - type: APPROVAL
   name: Approval 1
   parallel: false
+- type: ENV_STATE
+  name: deploy-dev
+  parallel: true
+  workflowName: deploy-to-dev
