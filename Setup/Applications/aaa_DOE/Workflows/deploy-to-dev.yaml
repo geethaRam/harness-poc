@@ -1,0 +1,22 @@
+harnessApiVersion: '1.0'
+type: BUILD
+envName: doe-env
+phases:
+- daemonSet: false
+  name: Phase 1
+  phaseSteps:
+  - type: PREPARE_STEPS
+    name: Prepare Steps
+    steps:
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        scriptType: BASH
+        scriptString: bash /tmp/DOE/sample-springboot/delete-full-stack.sh
+        timeoutMillis: 600000
+        connectionType: SSH
+        executeOnDelegate: true
+    stepsInParallel: false
+  provisionNodes: false
+  statefulSet: false
+templatized: false
