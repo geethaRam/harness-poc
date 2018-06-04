@@ -6,10 +6,6 @@ phases:
   name: Phase 1
   phaseSteps:
   - type: PREPARE_STEPS
-    failureStrategies:
-    - retryCount: 0
-      specificSteps:
-      - Shell Script
     name: Prepare Steps
     steps:
     - type: SHELL_SCRIPT
