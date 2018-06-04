@@ -15,6 +15,13 @@ phases:
         timeoutMillis: 600000
         connectionType: SSH
         executeOnDelegate: true
+    - type: SHELL_SCRIPT
+      name: Shell Script_2
+      properties:
+        scriptType: BASH
+        timeoutMillis: 600000
+        connectionType: SSH
+        executeOnDelegate: true
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
