@@ -12,3 +12,7 @@ pipelineStages:
   name: deploy-dev
   parallel: true
   workflowName: deploy-to-dev
+- type: ENV_STATE
+  name: AppD-Verification
+  parallel: false
+  workflowName: AppDynamics-Verification
