@@ -51,6 +51,17 @@ phases:
     stepsInParallel: false
   - type: VERIFY_SERVICE
     name: Verify Service
+    steps:
+    - type: APP_DYNAMICS
+      name: AppDynamics
+      properties:
+        tierId: '3638'
+        analysisServerConfigId: H-s8SN3FSUSbfBcgu-hWTA
+        analysisTolerance: LOW
+        applicationId: '654'
+        comparisonStrategy: COMPARE_WITH_PREVIOUS
+        dependentTiersToAnalyze: null
+        timeDuration: '15'
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
