@@ -6,6 +6,10 @@ phases:
   name: Phase 1
   phaseSteps:
   - type: PREPARE_STEPS
+    failureStrategies:
+    - retryCount: 0
+      specificSteps:
+      - Shell Script
     name: Prepare Steps
     steps:
     - type: SHELL_SCRIPT
@@ -16,7 +20,7 @@ phases:
         timeoutMillis: 600000
         connectionType: SSH
         executeOnDelegate: true
-    stepsInParallel: false
+    stepsInParallel: true
   provisionNodes: false
   statefulSet: false
 templatized: false
