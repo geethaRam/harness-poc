@@ -17,12 +17,6 @@ phases:
         connectionType: SSH
         executeOnDelegate: true
     stepsInParallel: false
-  - type: COLLECT_ARTIFACT
-    name: Collect Artifact
-    stepsInParallel: false
-  - type: WRAP_UP
-    name: Wrap Up
-    stepsInParallel: false
   provisionNodes: false
   statefulSet: false
 templatized: false
