@@ -4,4 +4,7 @@ pipelineStages:
 - type: ENV_STATE
   name: doe-provision
   parallel: false
-  workflowName: doe-workflow
+  workflowName: provision-ecs-alb
+- type: APPROVAL
+  name: Approval 1
+  parallel: false
