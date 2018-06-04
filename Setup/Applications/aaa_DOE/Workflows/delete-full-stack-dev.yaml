@@ -16,7 +16,7 @@ phases:
         timeoutMillis: 600000
         connectionType: SSH
         executeOnDelegate: true
-    stepsInParallel: true
+    stepsInParallel: false
   provisionNodes: false
   statefulSet: false
 templatized: false
