@@ -32,11 +32,6 @@ phases:
     stepsInParallel: false
   - type: DISABLE_SERVICE
     name: Disable Service
-    steps:
-    - type: ELASTIC_LOAD_BALANCER
-      name: Elastic Load Balancer
-      properties:
-        operation: Disable
     stepsInParallel: false
   - type: DEPLOY_SERVICE
     name: Deploy Service
