@@ -43,11 +43,6 @@ phases:
     stepsInParallel: false
   - type: ENABLE_SERVICE
     name: Enable Service
-    steps:
-    - type: ELASTIC_LOAD_BALANCER
-      name: Elastic Load Balancer
-      properties:
-        operation: Enable
     stepsInParallel: false
   - type: VERIFY_SERVICE
     name: Verify Service
