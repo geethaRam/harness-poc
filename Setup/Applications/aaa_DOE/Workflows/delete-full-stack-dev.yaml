@@ -7,6 +7,15 @@ phases:
   phaseSteps:
   - type: PREPARE_STEPS
     name: Prepare Steps
+    steps:
+    - type: SHELL_SCRIPT
+      name: Shell Script
+      properties:
+        scriptType: BASH
+        scriptString: bash /tmp/DOE/sample-springboot/springboot/delete-full-stack.sh
+        timeoutMillis: 600000
+        connectionType: SSH
+        executeOnDelegate: true
     stepsInParallel: false
   - type: COLLECT_ARTIFACT
     name: Collect Artifact
