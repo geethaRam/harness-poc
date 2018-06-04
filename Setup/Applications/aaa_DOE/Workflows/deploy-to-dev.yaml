@@ -12,7 +12,7 @@ phases:
       name: Shell Script
       properties:
         scriptType: BASH
-        scriptString: bash /tmp/DOE/sample-springboot/deploy-to-dev.sh
+        scriptString: bash /tmp/DOE/sample-springboot/deploy.sh
         timeoutMillis: 600000
         connectionType: SSH
         executeOnDelegate: true
